@@ -1,0 +1,15 @@
+syntax = "proto3";
+package io.streams;
+
+import "google/protobuf/timestamp.proto";
+
+message Coin {
+	optional string maker_order_id = 2;
+    optional string taker_order_id = 3;
+	optional string side = 4;
+    optional string product_id = 7;
+    optional double size = 1;
+    optional double price = 6;
+    optional google.protobuf.Timestamp time = 5;
+    optional double trade_id = 8;
+ }
