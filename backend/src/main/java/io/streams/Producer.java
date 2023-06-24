@@ -40,7 +40,7 @@ public class Producer {
         
 
 
-        
+        //open websocket connection
         while (true){
             ws.sendText(payload, true);
             Thread.sleep(1000);
@@ -67,11 +67,10 @@ public class Producer {
 
         public CompletionStage<?> onText(WebSocket webSocket, CharSequence data, boolean last) {
         
-            String response = data.toString();
 
-            if (response.contains("price")) {
-                System.out.println("WebSocket received data........." + response + "\n");
-                sendToKafka(response);
+            if (data.toString().contains("price")) {
+                System.out.println("WebSocket received data........." + data + "\n");
+                sendToKafka(data.toString());
             }
             
             return WebSocket.Listener.super.onText(webSocket, data, last);
@@ -126,10 +125,12 @@ public class Producer {
       
       static Coin getCoin(String data) {
             
+            //set response data to GSON 
             Gson gson = new Gson();
             Map<String, Object> map = gson.fromJson(data, Map.class);
             
             
+            //access GSON to build Coin proto 
             Coin coin = Coin.newBuilder()
                             .setMakerOrderId(map.get("maker_order_id").toString()) 
                             .setTakerOrderId(map.get("taker_order_id").toString()) 
