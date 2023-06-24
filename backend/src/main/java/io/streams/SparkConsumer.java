@@ -9,7 +9,7 @@ import static org.apache.spark.sql.protobuf.functions.*;
 
 
 
-class Consumer {
+class SparkConsumer {
     public static void main(String[] args) {
 
      
