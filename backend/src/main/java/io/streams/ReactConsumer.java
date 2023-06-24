@@ -7,9 +7,7 @@ import java.util.Arrays;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.ByteArrayDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
-
 import io.streams.CoinOuterClass.Coin;
-
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -31,13 +29,22 @@ public class ReactConsumer {
       consumer.subscribe(Arrays.asList("market_data7"));
       
       
-      while (true) {
-         ConsumerRecords<String, byte[]> records = consumer.poll(Duration.ofMillis(0));
-         for (ConsumerRecord<String, byte[]> record : records)
-            
-            System.out.println(Coin.parseFrom(record.value()));
+        try {
 
-      }
+            while (true) {
+                ConsumerRecords<String, byte[]> records = consumer.poll(Duration.ofMillis(0));
+                for (ConsumerRecord<String, byte[]> record : records)
+                    
+                    System.out.println(Coin.parseFrom(record.value()));
+            }
+
+        }
+
+        
+        finally {
+            consumer.close();
+        }
+
 
    }
 }
