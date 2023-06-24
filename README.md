@@ -9,20 +9,19 @@
 
 
 #start zookeeper
-#bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/zookeeper-server-start.sh config/zookeeper.properties
 
 #start kafka
-#bin/kafka-server-start.sh config/server.properties
+bin/kafka-server-start.sh config/server.properties
 
-#start spark: http://localhost:8080/
-#./sbin/start-master.sh
-#./sbin/stop-master.sh
-#usr/local/Cellar/apache-spark/3.4.0/libexec/
+#start spark: http://localhost:8080/ --> usr/local/Cellar/apache-spark/3.4.0/libexec/
+./sbin/start-master.sh
+./sbin/stop-master.sh
 
 
 #start cassandra
-#cassandra -f for daemon
-#cqlsh for UI
+cassandra -f for daemon
+cqlsh
 
 
 #protoc
