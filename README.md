@@ -1,4 +1,4 @@
-### streaming-data-pipeline
+### streaming-processing-pipeline
 
 1. Ingesting coinbase data via web-sockets
 2. Producer writes data to kafka broker in Java
