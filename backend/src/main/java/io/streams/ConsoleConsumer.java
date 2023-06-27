@@ -13,7 +13,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 
 
-public class ReactConsumer {
+public class ConsoleConsumer {
    public static void main(String[] args) throws Exception {
       
      
@@ -28,7 +28,8 @@ public class ReactConsumer {
 
       consumer.subscribe(Arrays.asList("market_data7"));
       
-      
+    
+
         try {
 
             while (true) {
