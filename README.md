@@ -1,6 +1,6 @@
 <h1>streaming-processing-pipeline</h1>
 
-![design](https://github.com/nathanembaye/coinbase-pipeline/assets/62483081/89b6c1e6-e36d-404f-a0bb-0712522de125)
+![design](https://github.com/nathanembaye/coinbase-pipeline/assets/62483081/f9d6e545-0050-411b-868c-316e49545eb6)
 
 
 1. Connect to Coinbase WebsSocket via Java Producer App
@@ -8,6 +8,13 @@
 3. Producer writes data to Kafka broker
 4. Consumer is Spark Structured Streaming engine for distributed processing
 5. Persisted data in cassandra db via CQL
+
+
+
+
+
+
+
 
 
 #start zookeeper
