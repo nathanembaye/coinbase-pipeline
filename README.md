@@ -3,7 +3,7 @@
 ![design](https://github.com/nathanembaye/coinbase-pipeline/assets/62483081/89b6c1e6-e36d-404f-a0bb-0712522de125)
 
 
-1. Connect to Coinbase's WebsSocket via Java Producer App
+1. Connect to Coinbase WebsSocket via Java Producer App
 2. Serialize data with Protocol Buffer, Google Protobuf
 3. Producer writes data to Kafka broker
 4. Consumer is Spark Structured Streaming engine for distributed processing
