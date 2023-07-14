@@ -1,12 +1,13 @@
 <h1>streaming-processing-pipeline</h1>
 
-<img width="2211" alt="diagram" src="https://github.com/nathanembaye/coinbase-pipeline/assets/62483081/295e72d4-8372-4f2c-89bf-dd706909fbd5">
+![design](https://github.com/nathanembaye/coinbase-pipeline/assets/62483081/89b6c1e6-e36d-404f-a0bb-0712522de125)
 
-1. Ingesting coinbase data via web-sockets
-2. Producer writes data to kafka broker in Java
-3. Data is serialized with Google Protobuf
-3. Consumer is spark structured streaming for distributed processing
-4. Persisted data in cassandra db via CQL
+
+1. Connect to Coinbase's WebsSocket via Java Producer App
+2. Serialize data with Protocol Buffer, Google Protobuf
+3. Producer writes data to Kafka broker
+4. Consumer is Spark Structured Streaming engine for distributed processing
+5. Persisted data in cassandra db via CQL
 
 
 #start zookeeper
